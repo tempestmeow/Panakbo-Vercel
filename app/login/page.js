@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-// import "@/../../ui/css/blog-app.css";
+import "../styles/sign.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ export default function Login() {
           <a className="signupGuest">
             If you don't want to have an account,
             <br /> You can login as a guest{" "}
-            <span className="guestLink">here</span>.
+            <div className="guestLink">here</div>.
           </a>
           <form onSubmit={handleSubmit} className="signupForm">
             <div className="inputContainer">

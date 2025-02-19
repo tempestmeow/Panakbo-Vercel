@@ -3,6 +3,8 @@ import "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // New hook for the App Router
 import { signIn } from "next-auth/react";
+import "../styles/sign.css";
+
 // import "@/../../ui/css/blog-app.css"; // Adjust the import as needed
 
 export default function Signup() {
