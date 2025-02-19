@@ -3,3 +3,5 @@ next.config.mjs
 package-lock.json
 node_modules
 .next
+.env.local
+package.json
