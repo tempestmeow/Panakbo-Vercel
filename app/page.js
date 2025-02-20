@@ -4,7 +4,6 @@ import "./styles/global.css";
 export default function Home() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      export default function Header(){" "}
       {
         <div className="Header">
           <div className="menu">
@@ -43,7 +42,7 @@ export default function Home() {
 
           <div className="left">
             <div className="searchInput">
-              <input type="text"></input>
+              <input type="text" className="search-bar"></input>
               <span class="material-symbols-outlined search">search</span>
             </div>
 
@@ -80,7 +79,7 @@ export default function Home() {
       }
       <div className="Main">
         <div className="main-left">
-          <img src={"../pages/images/goal1.png"} />
+          <img src="/images/saleShoe.png" />
         </div>
         <div className="main-right">test</div>
       </div>

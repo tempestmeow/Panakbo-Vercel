@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import "../styles/sign.css";
+import "../styles/global.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <div className="signupContent">
-      <div className="appName Header">Panakbo</div>
+      <div className="appName">Panakbo</div>
       <div className="mainContent">
         <div className="signupCard">
           <h2 className="signupTitle">Login</h2>
@@ -45,9 +45,11 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className={hasInputValue ? "activeInput" : ""}
+                className={hasInputValue ? "activeInput inputDiv" : "inputDiv"}
               />
-              <span className={hasInputValue ? "active" : "input"}>Email</span>
+              <span className={hasInputValue ? "active span" : "input span"}>
+                Email
+              </span>
             </div>
             <div className="inputContainer">
               <input
@@ -55,10 +57,16 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className={hasPasswordInputValue ? "activeInputPassword" : ""}
+                className={
+                  hasPasswordInputValue
+                    ? "activeInputPassword inputDiv"
+                    : "inputDiv"
+                }
               />
               <span
-                className={hasPasswordInputValue ? "activePassword" : "input"}
+                className={
+                  hasPasswordInputValue ? "activePassword span" : "input span"
+                }
               >
                 Password
               </span>

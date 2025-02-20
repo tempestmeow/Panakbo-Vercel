@@ -3,7 +3,7 @@ import "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // New hook for the App Router
 import { signIn } from "next-auth/react";
-import "../styles/sign.css";
+import "../styles/global.css";
 
 // import "@/../../ui/css/blog-app.css"; // Adjust the import as needed
 
@@ -45,7 +45,7 @@ export default function Signup() {
 
   return (
     <div className="signupContent">
-      <div className="appName Header">Panakbo</div>
+      <div className="appName">Panakbo</div>
       <div className="mainContent">
         <div className="signupCard">
           <h2 className="signupTitle">Signup</h2>
@@ -61,9 +61,11 @@ export default function Signup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className={hasInputValue ? "activeInput" : ""}
+                className={hasInputValue ? "activeInput inputDiv" : "inputDiv"}
               />
-              <span className={hasInputValue ? "active" : "input"}>Email</span>
+              <span className={hasInputValue ? "active span" : "input span"}>
+                Email
+              </span>
               <div className="error"></div>
             </div>
             <div className="inputContainer">
@@ -72,10 +74,16 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className={hasPasswordInputValue ? "activeInputPassword" : ""}
+                className={
+                  hasPasswordInputValue
+                    ? "activeInputPassword inputDiv"
+                    : "inputDiv"
+                }
               />
               <span
-                className={hasPasswordInputValue ? "activePassword" : "input"}
+                className={
+                  hasPasswordInputValue ? "activePassword span" : "input span"
+                }
               >
                 Password
               </span>
