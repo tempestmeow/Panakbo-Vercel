@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined");
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios,arrow_forward_ios,");
 /* HEADER */
 
 * {
@@ -72,11 +73,15 @@ input.search-bar {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .main-left {
-  flex: 3;
-  height: 300px;
+  flex: 2;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .main-right {
@@ -280,3 +285,79 @@ button.submit-signup {
 }
 
 /* SIGNUP  ENDS HERE*/
+
+/* MAIN PAGE BELOW*/
+
+.offer-image {
+  position: absolute;
+  width: min(20vw, 250px);
+  height: auto;
+  left: 26%;
+  bottom: -15%;
+}
+
+.offers {
+  background-color: #dbdada;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(189, 188, 188);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 70px;
+  font-family: "Inter", sans-serif;
+  padding: 2rem;
+  max-width: 20rem;
+  position: relative;
+}
+
+.sale-offer {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.sale-offer-smaller {
+  font-size: 1.1rem;
+}
+
+.sale-description {
+  color: #525252;
+  font-size: 0.9rem;
+}
+
+.sale-button {
+  margin-top: 2rem;
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  width: fit-content;
+}
+
+.circle {
+  background-color: black;
+  height: 0.57rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circleGroup {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.dealNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.3rem;
+}
+
+.arrow {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.contactLogos {
+  margin-top: 10rem;
+}
