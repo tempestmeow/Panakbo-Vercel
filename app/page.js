@@ -1,7 +1,9 @@
 // Depending on your Header component, add "use client" if needed.
 "use client";
 import "./styles/global.css";
+import { useState } from "react";
 export default function Home() {
+  const [view, setView] = useState("All");
   return (
     <div className="page" style={{ display: "flex", flexDirection: "column" }}>
       {
@@ -133,7 +135,45 @@ export default function Home() {
             </svg>
           </div>
         </div>
-        <div className="main-right"></div>
+        <div className="main-right">
+          <div className="categories">
+            <span
+              className={`categoryIcon ${view === "All" ? "all" : ""}`}
+              onClick={() => setView("All")}
+            >
+              All
+            </span>
+            <span
+              className={`categoryIcon ${view === "Sneakers" ? "all" : ""}`}
+              onClick={() => setView("Sneakers")}
+            >
+              Sneakers
+            </span>
+            <span
+              className={`categoryIcon ${view === "Clothes" ? "all" : ""}`}
+              onClick={() => setView("Clothes")}
+            >
+              Clothes
+            </span>
+            <span
+              className={`categoryIcon ${view === "Mens" ? "all" : ""}`}
+              onClick={() => setView("Mens")}
+            >
+              Mens
+            </span>
+            <span
+              className={`categoryIcon ${view === "Kids" ? "all" : ""}`}
+              onClick={() => setView("Kids")}
+            >
+              Kids
+            </span>
+            <div className="categoryCircles">
+              <div className="circle category"></div>
+              <div className="circle category"></div>
+              <div className="circle category"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
