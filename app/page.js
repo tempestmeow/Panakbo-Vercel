@@ -4,6 +4,8 @@ import "./styles/global.css";
 import { useState } from "react";
 import Header from "@/components/Header";
 import LeftDisplay from "@/components/LeftDisplay";
+import Categories from "@/components/Categories";
+import ProductsDisplay from "@/components/ProductsDisplay";
 
 export default function Home() {
   const [view, setView] = useState("All");
@@ -74,9 +76,52 @@ export default function Home() {
     product4,
     product5,
     product6,
+    product1,
+    product2,
+    product3,
+    product4,
+    product5,
+    product6,
+    product1,
+    product2,
+    product3,
+    product4,
+    product5,
+    product6,
   ];
-
   const [productsInView, setProductsInView] = useState(allProducts);
+
+  const [indexOfCart, setIndexOfCart] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const toggleCart = (id) => {
+    let updatedCart = [...cart];
+
+    let isInCart = false;
+
+    for (let i = 0; i < updatedCart.length; i++) {
+      if (updatedCart[i].id === id) {
+        updatedCart.splice(i, 1);
+        isInCart = true;
+        break;
+      }
+    }
+
+    if (!isInCart) {
+      for (let i = 0; i < productsInView.length; i++) {
+        if (productsInView[i].id === id) {
+          updatedCart.push(productsInView[i]);
+          break;
+        }
+      }
+    }
+
+    setCart(updatedCart);
+  };
+
+  const handleViewProduct = () => {
+    setViewProduct(!viewProduct);
+  };
 
   const mensList = allProducts.filter((product) =>
     product.category.includes("Mens")
@@ -88,46 +133,14 @@ export default function Home() {
       <div className="Main">
         <LeftDisplay />
         <div className="main-right">
-          <div className="categories">
-            <span
-              className={`categoryIcon ${view === "All" ? "all" : ""}`}
-              onClick={() => setView("All")}
-            >
-              All
-            </span>
-            <span
-              className={`categoryIcon ${view === "Sneakers" ? "all" : ""}`}
-              onClick={() => setView("Sneakers")}
-            >
-              Sneakers
-            </span>
-            <span
-              className={`categoryIcon ${view === "Clothes" ? "all" : ""}`}
-              onClick={() => setView("Clothes")}
-            >
-              Clothes
-            </span>
-            <span
-              className={`categoryIcon ${view === "Mens" ? "all" : ""}`}
-              onClick={() => setView("Mens")}
-            >
-              Mens
-            </span>
-            <span
-              className={`categoryIcon ${view === "Kids" ? "all" : ""}`}
-              onClick={() => setView("Kids")}
-            >
-              Kids
-            </span>
-            <div className="categoryCircles">
-              <div className="circle category"></div>
-              <div className="circle category"></div>
-              <div className="circle category"></div>
-            </div>
-            <div className="products-display">
-              <div className="productsCollection"></div>
-            </div>
-          </div>
+          <Categories view={view} setView={setView} />
+
+          <ProductsDisplay
+            products={productsInView}
+            toggleCart={toggleCart}
+            cart={cart}
+            handleViewProduct={handleViewProduct}
+          />
         </div>
       </div>
     </div>

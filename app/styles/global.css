@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .searchInput {
@@ -108,6 +108,7 @@ body {
   color: black;
   font-family: "Poppins", sans-serif;
   margin-top: 10vh;
+  min-width: 400px;
 }
 
 .appName {
@@ -204,11 +205,12 @@ span.activePassword {
 }
 
 .signupCard {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10vh;
   flex: 3;
-}
-
-.signupDesign {
-  flex: 7;
 }
 
 .rememberForm {
@@ -242,15 +244,16 @@ a.remember {
 }
 
 .forgotPassword {
-  font-size: 0.63rem;
   font-weight: lighter;
   font-family: sans-serif;
+  font-size: 0.6rem;
 }
 
 .signupDesign {
   background-color: #282828;
   margin: 0rem 3rem 2rem 3rem;
   border-radius: 30px;
+  flex: 7;
 }
 
 .signupContent {
@@ -408,4 +411,68 @@ button.submit-signup {
 
 .page {
   height: 100vh;
+  width: 100vw;
+}
+
+/* PRODUCTS */
+.productsCollection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+  max-height: 30.5rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.productsCollection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.productsCollection::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 60px;
+}
+
+.productImage {
+  width: 14rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.productCard {
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 2.1rem 1.4rem 2.1rem;
+  border: 1px solid rgb(189, 188, 188);
+  box-shadow: 0px 4px 4px 0px var(--boxShadow);
+  border-radius: 70px;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.productName {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.productPrice {
+  font-size: 0.9rem;
+}
+
+.statusIcon {
+  transform: scale(0.9);
+}
+
+.productStatus {
+  display: flex;
+  gap: 0.3rem;
 }
