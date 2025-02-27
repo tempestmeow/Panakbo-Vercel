@@ -1,4 +1,3 @@
-// Depending on your Header component, add "use client" if needed.
 "use client";
 import "./styles/global.css";
 import { useState } from "react";

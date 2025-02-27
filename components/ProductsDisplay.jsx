@@ -1,9 +1,13 @@
+import { useRouter } from "next/navigation";
+
 export default function ProductsDisplay({
   products,
   toggleCart,
   cart,
   handleViewProduct,
 }) {
+  const router = useRouter();
+
   return (
     <>
       <div className="productsCollection">
@@ -11,7 +15,12 @@ export default function ProductsDisplay({
           let isInCart = cart.some((item) => item.id == product.id);
 
           return (
-            <div className="productCard" key={index}>
+            <div
+              className="productCard"
+              key={product.id}
+              onClick={() => router.push(`/products/${product.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <img src={product.img} className="productImage" />
 
               <div className="productDetails">
