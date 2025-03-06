@@ -427,7 +427,7 @@ button.submit-signup {
 /* page */
 
 .page {
-  height: 100vh;
+  height: auto;
   width: 100vw;
 }
 
@@ -505,4 +505,18 @@ button.submit-signup {
 .productStatus {
   display: flex;
   gap: 0.3rem;
+}
+
+/* PRODUCT PAGE */
+
+.productPage {
+  width: 100vw;
+  height: auto;
+}
+
+.productBody {
+  padding: 1rem 2rem;
+}
+
+.contactLogos {
 }

@@ -1,7 +1,9 @@
 "use client";
 
+import "@/app/styles/global.css";
 import { useParams } from "next/navigation";
-
+import Header from "@/components/Header";
+import ContactLogos from "@/components/ContactLogos";
 export default function ProductPage() {
   const { id } = useParams();
 
@@ -20,10 +22,17 @@ export default function ProductPage() {
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.img} alt={product.name} />
-      <p>Price: ${product.price}</p>
+    <div className="productPage">
+      <Header />
+
+      <div className="productBody">
+        <div className="productDesign">
+          <h1>{product.name}</h1>
+          <img src={product.img} alt={product.name} />
+          <p>Price: ${product.price}</p>
+        </div>
+        <ContactLogos />
+      </div>
     </div>
   );
 }
