@@ -8,7 +8,7 @@ export default function ProductPage() {
   const { id } = useParams();
 
   const products = [
-    { id: 1, name: "Air Max 97", price: 20.99, img: "/images/shoe1.png" },
+    { id: 1, name: "Air Max 97", price: 20.99, img: "/images/shoe1big.png" },
     { id: 2, name: "React Presto", price: 20.99, img: "/images/shoe2.png" },
     { id: 3, name: "Nike Jumper 1", price: 20.99, img: "/images/shoe3.png" },
     { id: 4, name: "React Presto", price: 20.99, img: "/images/shoe4.png" },

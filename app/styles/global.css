@@ -515,28 +515,65 @@ button.submit-signup {
 }
 
 .productBody {
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
 }
 
 .productDesign {
   position: relative;
-  width: 700px;
-  aspect-ratio: 1.5;
+  width: 800px; /* Default size */
+  aspect-ratio: 4; /* Maintains proportions */
+  max-width: 90vw; /* Makes it responsive */
 }
 
 .rectangleDesign {
   position: absolute;
-  width: 12%;
-  height: 100%;
+  width: 8%;
+  height: 130%;
   background: linear-gradient(to bottom, #ffeb3b, #c0a000);
   top: 0;
 }
 
-h1.shoeImage {
+.shoeImage {
   z-index: 2;
   position: absolute;
-  width: 100%;
   bottom: 0;
+  width: 90%;
+  top: -25%;
+}
+
+/* Positioning for stripes */
+.stripe1 {
+  left: 30%;
+}
+.stripe2 {
+  left: 40%;
+}
+.stripe3 {
   left: 50%;
-  transform: translateX(-50%);
+}
+.stripe4 {
+  left: 60%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Tablet */
+  .productDesign {
+    width: 600px;
+  }
+  .shoeImage {
+    width: 80%;
+    top: -20%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile */
+  .productDesign {
+    width: 400px;
+  }
+  .shoeImage {
+    width: 70%;
+    top: -15%;
+  }
 }
