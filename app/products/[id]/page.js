@@ -27,9 +27,11 @@ export default function ProductPage() {
 
       <div className="productBody">
         <div className="productDesign">
-          <h1>{product.name}</h1>
-          <img src={product.img} alt={product.name} />
-          <p>Price: ${product.price}</p>
+          <img src={product.img} className="shoeImage" />
+          <div className="rectangleDesign stripe1"></div>
+          <div className="rectangleDesign stripe2"></div>
+          <div className="rectangleDesign stripe3"></div>
+          <div className="rectangleDesign stripe4"></div>
         </div>
         <ContactLogos />
       </div>

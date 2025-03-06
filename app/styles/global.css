@@ -518,5 +518,25 @@ button.submit-signup {
   padding: 1rem 2rem;
 }
 
-.contactLogos {
+.productDesign {
+  position: relative;
+  width: 700px;
+  aspect-ratio: 1.5;
+}
+
+.rectangleDesign {
+  position: absolute;
+  width: 12%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffeb3b, #c0a000);
+  top: 0;
+}
+
+h1.shoeImage {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
