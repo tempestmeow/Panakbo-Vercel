@@ -57,9 +57,9 @@ export default function ProductPage() {
           <div className="scroll-down">
             <div className="scroll-arrows">
               <Mouse />
-              <ScrollIcon color={"#323232"} />
-              <ScrollIcon color={"#595959"} />
-              <ScrollIcon color={"#B7B3B3"} />
+              <ScrollIcon delay="0" />
+              <ScrollIcon delay="0.5" />
+              <ScrollIcon delay="1" />
             </div>
             <a className="scroll-down-text">
               Scroll down <br />

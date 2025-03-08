@@ -619,25 +619,47 @@ button.submit-signup {
   gap: 1rem;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .productTitle {
   font-size: 2.7rem;
   font-weight: 670;
   letter-spacing: 0.2rem;
 }
 
+.productTitle,
+.productDescription,
+.pricing,
+.backIcon {
+  animation: fadeIn 1s ease-in-out, slideUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
 .backIcon {
   align-self: end;
   margin-right: 2rem;
+  animation-delay: 0.4s;
 }
 
 .productDescription {
   font-weight: 400;
   letter-spacing: 1px;
+  animation-delay: 0.6s;
 }
 
 .pricing {
   display: flex;
   gap: 3rem;
+  animation-delay: 0.8s;
 }
 
 .price {
@@ -665,11 +687,42 @@ a.check {
   font-size: 1.3rem;
 }
 
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .scroll-down {
   align-self: center;
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.6rem;
+  margin-top: 4rem;
+  animation: slideInFromRight 0.8s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes gradientFlow {
+  0% {
+    opacity: 0.2;
+  }
+  33% {
+    opacity: 0.8;
+  }
+  66% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
 
 .scroll-arrows {
@@ -677,7 +730,15 @@ a.check {
   flex-direction: column;
 }
 
+.downIcon {
+  animation: gradientFlow 1.5s infinite ease-in-out;
+}
+
 a.scroll-down-text {
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.downIcon path {
+  fill: #323232;
 }
