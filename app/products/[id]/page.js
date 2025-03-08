@@ -8,7 +8,14 @@ export default function ProductPage() {
   const { id } = useParams();
 
   const products = [
-    { id: 1, name: "Air Max 97", price: 20.99, img: "/images/shoe1big.png" },
+    {
+      id: 1,
+      name: "AIR MAX 97",
+      price: 20.99,
+      img: "/images/shoe1big.png",
+      descrption:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
     { id: 2, name: "React Presto", price: 20.99, img: "/images/shoe2.png" },
     { id: 3, name: "Nike Jumper 1", price: 20.99, img: "/images/shoe3.png" },
     { id: 4, name: "React Presto", price: 20.99, img: "/images/shoe4.png" },
@@ -33,6 +40,19 @@ export default function ProductPage() {
           <div className="rectangleDesign stripe3"></div>
           <div className="rectangleDesign stripe4"></div>
         </div>
+        <div className="productInfo">
+          <div className="productTitle">{product.title}</div>
+          <div className="productDescription">{product.description}</div>
+          <div className="pricing">
+            <div className="price">{product.price}</div>
+            <div className="checkout">
+              <span class="material-symbols-outlined">credit_card</span>Checkout
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="logos-container">
         <ContactLogos />
       </div>
     </div>
