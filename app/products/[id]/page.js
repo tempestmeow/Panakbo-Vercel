@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import ContactLogos from "@/components/ContactLogos";
 import BackIcon from "@/components/BakcIcon";
+import Mouse from "@/components/Mouse";
+import ScrollIcon from "@/components/ScrollIcon";
 export default function ProductPage() {
   const { id } = useParams();
 
@@ -51,6 +53,18 @@ export default function ProductPage() {
               <span class="material-symbols-outlined card">credit_card</span>
               <a className="check">Checkout</a>
             </div>
+          </div>
+          <div className="scroll-down">
+            <div className="scroll-arrows">
+              <Mouse />
+              <ScrollIcon color={"#323232"} />
+              <ScrollIcon color={"#595959"} />
+              <ScrollIcon color={"#B7B3B3"} />
+            </div>
+            <a className="scroll-down-text">
+              Scroll down <br />
+              for comments.
+            </a>
           </div>
         </div>
       </div>

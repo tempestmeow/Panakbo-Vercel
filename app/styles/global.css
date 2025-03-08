@@ -29,6 +29,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
 .searchInput {
@@ -505,6 +507,17 @@ button.submit-signup {
 
 /* PRODUCT PAGE */
 
+.Header {
+  padding: 1.7rem 4rem;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
 .productPage {
   font-family: "Inter", sans-serif;
   width: 100vw;
@@ -528,6 +541,8 @@ button.submit-signup {
   display: flex;
   height: 100%;
   max-height: 500px;
+  position: relative;
+  z-index: -1;
 }
 
 .productDesign {
@@ -538,6 +553,7 @@ button.submit-signup {
   max-height: 500px;
   overflow: hidden;
   display: flex;
+  z-index: -1;
 }
 
 .rectangleDesign {
@@ -546,6 +562,7 @@ button.submit-signup {
   height: 60%;
   background: linear-gradient(to bottom, #ffeb3b, #c0a000);
   top: 0;
+  z-index: -2;
 }
 
 .shoeImage {
@@ -646,4 +663,21 @@ a.check {
 
 .card {
   font-size: 1.3rem;
+}
+
+.scroll-down {
+  align-self: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.scroll-arrows {
+  display: flex;
+  flex-direction: column;
+}
+
+a.scroll-down-text {
+  font-size: 0.8rem;
+  font-weight: 500;
 }
