@@ -406,7 +406,7 @@ button.submit-signup {
 }
 
 .categories {
-  align-self: flex-start; /* Instead of justify-self, which doesn't work in flexbox */
+  align-self: flex-start;
   display: flex;
   font-size: 1.5rem;
   margin: 0 0 1rem 0.5rem;
@@ -572,7 +572,6 @@ button.submit-signup {
   top: -10%;
 }
 
-/* Positioning for stripes */
 .stripe1 {
   left: 30%;
 }
@@ -588,9 +587,7 @@ button.submit-signup {
   height: 40%;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  /* Tablet */
   .productDesign {
     width: 600px;
   }
@@ -601,7 +598,6 @@ button.submit-signup {
 }
 
 @media (max-width: 480px) {
-  /* Mobile */
   .productDesign {
     width: 400px;
   }
@@ -610,7 +606,6 @@ button.submit-signup {
     top: -15%;
   }
 }
-/* Product Page: Info*/
 
 .productInfo {
   display: flex;

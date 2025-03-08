@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+import { useState, useEffect } from "react";
 import "@/app/styles/global.css";
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
@@ -9,6 +11,19 @@ import Mouse from "@/components/Mouse";
 import ScrollIcon from "@/components/ScrollIcon";
 export default function ProductPage() {
   const { id } = useParams();
+  const [scrollTimes, setScrollTimes] = useState(0);
+  const [isInInfo, setInInfo] = useState(false);
+
+  const handleScroll = (event) => {
+    console.log("Scroll event:", event.deltaY, "isInInfo:", isInInfo);
+    if (isInInfo && event.deltaY > 0) {
+      setScrollTimes((prev) => prev + 1);
+    }
+  };
+
+  useEffect(() => {
+    console.log(scrollTimes);
+  }, [scrollTimes]);
 
   const products = [
     {
@@ -43,7 +58,17 @@ export default function ProductPage() {
           <div className="rectangleDesign stripe3"></div>
           <div className="rectangleDesign stripe4"></div>
         </div>
-        <div className="productInfo">
+        <div
+          className="productInfo"
+          onMouseEnter={() => {
+            {
+              console.log("Mouse entered productInfo");
+              setInInfo(true);
+            }
+          }}
+          onMouseLeave={() => setInInfo(false)}
+          onWheel={handleScroll}
+        >
           <BackIcon />
           <div className="productTitle">{product.name}</div>
           <div className="productDescription">{product.description}</div>
