@@ -66,7 +66,12 @@ export default function ProductPage() {
               setInInfo(true);
             }
           }}
-          onMouseLeave={() => setInInfo(false)}
+          onMouseLeave={() => {
+            {
+              console.log("Mouse entered productInfo");
+              setInInfo(false);
+            }
+          }}
           onWheel={handleScroll}
         >
           <BackIcon />
