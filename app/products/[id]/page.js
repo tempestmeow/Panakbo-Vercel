@@ -4,6 +4,7 @@ import "@/app/styles/global.css";
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import ContactLogos from "@/components/ContactLogos";
+import BackIcon from "@/components/BakcIcon";
 export default function ProductPage() {
   const { id } = useParams();
 
@@ -13,7 +14,7 @@ export default function ProductPage() {
       name: "AIR MAX 97",
       price: 20.99,
       img: "/images/shoe1big.png",
-      descrption:
+      description:
         "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
     },
     { id: 2, name: "React Presto", price: 20.99, img: "/images/shoe2.png" },
@@ -41,12 +42,14 @@ export default function ProductPage() {
           <div className="rectangleDesign stripe4"></div>
         </div>
         <div className="productInfo">
-          <div className="productTitle">{product.title}</div>
+          <BackIcon />
+          <div className="productTitle">{product.name}</div>
           <div className="productDescription">{product.description}</div>
           <div className="pricing">
-            <div className="price">{product.price}</div>
+            <div className="price">${product.price}</div>
             <div className="checkout">
-              <span class="material-symbols-outlined">credit_card</span>Checkout
+              <span class="material-symbols-outlined card">credit_card</span>
+              <a className="check">Checkout</a>
             </div>
           </div>
         </div>
