@@ -42,14 +42,18 @@ export default function ProductPage() {
   const accounts = [account1, account2];
 
   const findAccounts = (id) => {
-    return accounts
-      .flatMap((acc) => acc.comments)
-      .filter((comment) => comment.productId == id)
-      .map((comment) => comment.content);
+    return accounts.flatMap((acc) =>
+      acc.comments
+        .filter((comment) => comment.productId == id)
+        .map((comment) => ({
+          name: acc.name,
+          stars: comment.stars,
+          content: comment.content,
+        }))
+    );
   };
 
   const [commentsToShow, setCommentsToShow] = useState([]);
-  const productComments = findAccounts(id);
 
   const handleScroll = (event) => {
     const now = Date.now();
@@ -65,6 +69,8 @@ export default function ProductPage() {
   };
 
   useEffect(() => {
+    const productComments = findAccounts(id);
+
     if (scrollTimes > 0) {
       const startIdx = 0;
       const endIdx = scrollTimes * 2;
@@ -72,7 +78,8 @@ export default function ProductPage() {
     } else {
       setCommentsToShow([]);
     }
-  }, [scrollTimes, productComments]);
+  }, [scrollTimes, id]);
+
   const products = [
     {
       id: 1,
@@ -140,13 +147,23 @@ export default function ProductPage() {
               </div>
             </>
           )}
-          <div className="comments-section">
-            {commentsToShow.map((comment, index) => (
-              <div key={index} className="comment">
-                {comment}
+          {scrollTimes > 0 && (
+            <div className="comments-section">
+              {commentsToShow.map((comment, index) => (
+                <div key={index} className="comment">
+                  <strong>{comment.name}</strong> ⭐ {comment.stars}
+                  <p>{comment.content}</p>
+                </div>
+              ))}
+              <div className="scroll-down">
+                <div className="scroll-arrows-comments">
+                  <ScrollIcon delay="0" />
+                  <ScrollIcon delay="0.5" />
+                  <ScrollIcon delay="1" />
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 

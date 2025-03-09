@@ -720,7 +720,8 @@ a.check {
   }
 }
 
-.scroll-arrows {
+.scroll-arrows,
+.scroll-arrows-comments {
   display: flex;
   flex-direction: column;
 }
@@ -736,4 +737,14 @@ a.scroll-down-text {
 
 .downIcon path {
   fill: #323232;
+}
+
+/* COMMENTS SECTION */
+
+.comments-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-arrows-comments {
 }
