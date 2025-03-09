@@ -113,29 +113,33 @@ export default function ProductPage() {
           onWheel={handleScroll}
         >
           <BackIcon />
-          <div className="productTitle">{product.name}</div>
-          <div className="productDescription">{product.description}</div>
-          <div className="pricing">
-            <div className="price">${product.price}</div>
-            <div className="checkout">
-              <span className="material-symbols-outlined card">
-                credit_card
-              </span>
-              <a className="check">Checkout</a>
-            </div>
-          </div>
-          <div className="scroll-down">
-            <div className="scroll-arrows">
-              <Mouse />
-              <ScrollIcon delay="0" />
-              <ScrollIcon delay="0.5" />
-              <ScrollIcon delay="1" />
-            </div>
-            <a className="scroll-down-text">
-              Scroll down <br />
-              for comments.
-            </a>
-          </div>
+          {scrollTimes == 0 && (
+            <>
+              <div className="productTitle">{product.name}</div>
+              <div className="productDescription">{product.description}</div>
+              <div className="pricing">
+                <div className="price">${product.price}</div>
+                <div className="checkout">
+                  <span className="material-symbols-outlined card">
+                    credit_card
+                  </span>
+                  <a className="check">Checkout</a>
+                </div>
+              </div>
+              <div className="scroll-down">
+                <div className="scroll-arrows">
+                  <Mouse />
+                  <ScrollIcon delay="0" />
+                  <ScrollIcon delay="0.5" />
+                  <ScrollIcon delay="1" />
+                </div>
+                <a className="scroll-down-text">
+                  Scroll down <br />
+                  for comments.
+                </a>
+              </div>
+            </>
+          )}
           <div className="comments-section">
             {commentsToShow.map((comment, index) => (
               <div key={index} className="comment">
