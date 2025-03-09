@@ -1,30 +1,78 @@
 "use client";
 
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "@/app/styles/global.css";
 import { useParams } from "next/navigation";
 import Header from "@/components/Header";
 import ContactLogos from "@/components/ContactLogos";
-import BackIcon from "@/components/BakcIcon";
+import BackIcon from "@/components/BackIcon";
 import Mouse from "@/components/Mouse";
 import ScrollIcon from "@/components/ScrollIcon";
+
 export default function ProductPage() {
   const { id } = useParams();
   const [scrollTimes, setScrollTimes] = useState(0);
   const [isInInfo, setInInfo] = useState(false);
+  const lastScrollRef = useRef(0);
+
+  const comment1 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 1,
+  };
+
+  const comment2 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4.5,
+    productId: 1,
+  };
+
+  const account1 = {
+    name: "Thomas S.",
+    comments: [comment1],
+  };
+
+  const account2 = {
+    name: "Luka D.",
+    comments: [comment2],
+  };
+
+  const accounts = [account1, account2];
+
+  const findAccounts = (id) => {
+    return accounts
+      .flatMap((acc) => acc.comments)
+      .filter((comment) => comment.productId == id)
+      .map((comment) => comment.content);
+  };
+
+  const [commentsToShow, setCommentsToShow] = useState([]);
+  const productComments = findAccounts(id);
 
   const handleScroll = (event) => {
-    console.log("Scroll event:", event.deltaY, "isInInfo:", isInInfo);
-    if (isInInfo && event.deltaY > 0) {
-      setScrollTimes((prev) => prev + 1);
+    const now = Date.now();
+    if (isInInfo && now - lastScrollRef.current > 200) {
+      // 200ms debounce
+      if (event.deltaY > 0) {
+        setScrollTimes((prev) => prev + 1);
+      } else if (event.deltaY < 0 && scrollTimes > 0) {
+        setScrollTimes((prev) => prev - 1);
+      }
+      lastScrollRef.current = now;
     }
   };
 
   useEffect(() => {
-    console.log(scrollTimes);
-  }, [scrollTimes]);
-
+    if (scrollTimes > 0) {
+      const startIdx = 0;
+      const endIdx = scrollTimes * 2;
+      setCommentsToShow(productComments.slice(startIdx, endIdx));
+    } else {
+      setCommentsToShow([]);
+    }
+  }, [scrollTimes, productComments]);
   const products = [
     {
       id: 1,
@@ -60,18 +108,8 @@ export default function ProductPage() {
         </div>
         <div
           className="productInfo"
-          onMouseEnter={() => {
-            {
-              console.log("Mouse entered productInfo");
-              setInInfo(true);
-            }
-          }}
-          onMouseLeave={() => {
-            {
-              console.log("Mouse entered productInfo");
-              setInInfo(false);
-            }
-          }}
+          onMouseEnter={() => setInInfo(true)}
+          onMouseLeave={() => setInInfo(false)}
           onWheel={handleScroll}
         >
           <BackIcon />
@@ -80,7 +118,9 @@ export default function ProductPage() {
           <div className="pricing">
             <div className="price">${product.price}</div>
             <div className="checkout">
-              <span class="material-symbols-outlined card">credit_card</span>
+              <span className="material-symbols-outlined card">
+                credit_card
+              </span>
               <a className="check">Checkout</a>
             </div>
           </div>
@@ -95,6 +135,13 @@ export default function ProductPage() {
               Scroll down <br />
               for comments.
             </a>
+          </div>
+          <div className="comments-section">
+            {commentsToShow.map((comment, index) => (
+              <div key={index} className="comment">
+                {comment}
+              </div>
+            ))}
           </div>
         </div>
       </div>
