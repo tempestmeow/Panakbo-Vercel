@@ -8,13 +8,13 @@ import ContactLogos from "@/components/ContactLogos";
 import BackIcon from "@/components/BackIcon";
 import Mouse from "@/components/Mouse";
 import ScrollIcon from "@/components/ScrollIcon";
-
+import Star from "@/components/Star";
 export default function ProductPage() {
   const { id } = useParams();
   const [scrollTimes, setScrollTimes] = useState(0);
   const [isInInfo, setInInfo] = useState(false);
   const lastScrollRef = useRef(0);
-
+  const totalStars = 5;
   const comment1 = {
     content:
       "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
@@ -25,7 +25,7 @@ export default function ProductPage() {
   const comment2 = {
     content:
       "Great sneakers with a classic look. Overall, really happy with my purchase!",
-    stars: 4.5,
+    stars: 4,
     productId: 1,
   };
 
@@ -105,7 +105,12 @@ export default function ProductPage() {
     <div className="productPage">
       <Header />
 
-      <div className="productBody">
+      <div
+        className="productBody"
+        onMouseEnter={() => setInInfo(true)}
+        onMouseLeave={() => setInInfo(false)}
+        onWheel={handleScroll}
+      >
         <div className="productDesign">
           <img src={product.img} className="shoeImage" />
           <div className="rectangleDesign stripe1"></div>
@@ -113,12 +118,7 @@ export default function ProductPage() {
           <div className="rectangleDesign stripe3"></div>
           <div className="rectangleDesign stripe4"></div>
         </div>
-        <div
-          className="productInfo"
-          onMouseEnter={() => setInInfo(true)}
-          onMouseLeave={() => setInInfo(false)}
-          onWheel={handleScroll}
-        >
+        <div className="productInfo">
           <BackIcon />
           {scrollTimes == 0 && (
             <>
@@ -151,7 +151,12 @@ export default function ProductPage() {
             <div className="comments-section">
               {commentsToShow.map((comment, index) => (
                 <div key={index} className="comment">
-                  <strong>{comment.name}</strong> ⭐ {comment.stars}
+                  <strong>{comment.name}</strong>{" "}
+                  <div className="stars">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} colored={i < comment.stars} />
+                    ))}
+                  </div>
                   <p>{comment.content}</p>
                 </div>
               ))}
