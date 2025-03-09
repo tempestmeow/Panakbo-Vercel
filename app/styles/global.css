@@ -748,3 +748,69 @@ a.scroll-down-text {
 
 .scroll-arrows-comments {
 }
+
+.star {
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  margin: 0.3rem;
+}
+
+/* COMMENTS CONTAINER */
+.comment {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.comment:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  width: 120px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.textbox {
+  position: relative;
+  background-color: #444;
+  color: white;
+  padding: 20px 25px;
+  border-radius: 20px;
+  max-width: 600px;
+  flex-grow: 1;
+}
+
+.textbox::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 30px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #444;
+}
+
+.comment:nth-child(even) .textbox::before {
+  left: auto;
+  right: -15px;
+  border-right: none;
+  border-left: 20px solid #444;
+}

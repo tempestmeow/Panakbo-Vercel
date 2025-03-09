@@ -157,7 +157,11 @@ export default function ProductPage() {
                       <Star key={i} colored={i < comment.stars} />
                     ))}
                   </div>
-                  <p>{comment.content}</p>
+                  <div
+                    className={`textbox ${index % 2 == 0 ? "right" : "left"}`}
+                  >
+                    {comment.content}
+                  </div>
                 </div>
               ))}
               <div className="scroll-down">
