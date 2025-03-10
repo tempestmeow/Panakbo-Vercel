@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
 import "@/app/styles/global.css";
 import { useParams } from "next/navigation";
@@ -12,11 +12,16 @@ import Star from "@/components/Star";
 import Avatar2 from "@/components/Avatar2";
 import Avatar1 from "@/components/Avatar1";
 export default function ProductPage() {
+  const router = useRouter();
   const { id } = useParams();
   const [scrollTimes, setScrollTimes] = useState(0);
   const [isInInfo, setInInfo] = useState(false);
   const lastScrollRef = useRef(0);
-  const totalStars = 5;
+
+  const backPage = () => {
+    router.push("/");
+  };
+
   const comment1 = {
     content:
       "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
@@ -120,10 +125,10 @@ export default function ProductPage() {
           <div className="rectangleDesign stripe1"></div>
           <div className="rectangleDesign stripe2"></div>
           <div className="rectangleDesign stripe3"></div>
-          <div className="rectangleDesign stripe4"></div>
+          <div className="rectangleDesign stripe4" s></div>
         </div>
         <div className="productInfo">
-          <BackIcon />
+          <BackIcon onClick={backPage} />
           {scrollTimes == 0 && (
             <>
               <div className="productTitle">{product.name}</div>
@@ -154,7 +159,10 @@ export default function ProductPage() {
           {scrollTimes > 0 && (
             <div className="comments-section">
               {commentsToShow.map((comment, index) => (
-                <div key={index} className="comment">
+                <div
+                  key={index}
+                  className={`comment ${index % 2 == 0 ? "r" : "l"}`}
+                >
                   <div className="account-comment">
                     <div className="withAvatar">
                       {index % 2 === 0 ? <Avatar1 /> : <Avatar2 />}

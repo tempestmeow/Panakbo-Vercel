@@ -856,3 +856,18 @@ a.scroll-down-text {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.comment {
+  animation: fadeIn 0.4s ease-in-out, slideUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.comment.l {
+  animation-delay: 0.35s;
+}
+
+.backIcon {
+  cursor: pointer;
+}
