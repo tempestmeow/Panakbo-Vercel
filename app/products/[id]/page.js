@@ -9,6 +9,8 @@ import BackIcon from "@/components/BackIcon";
 import Mouse from "@/components/Mouse";
 import ScrollIcon from "@/components/ScrollIcon";
 import Star from "@/components/Star";
+import Avatar2 from "@/components/Avatar2";
+import Avatar1 from "@/components/Avatar1";
 export default function ProductPage() {
   const { id } = useParams();
   const [scrollTimes, setScrollTimes] = useState(0);
@@ -32,11 +34,13 @@ export default function ProductPage() {
   const account1 = {
     name: "Thomas S.",
     comments: [comment1],
+    avatar: Avatar1,
   };
 
   const account2 = {
     name: "Luka D.",
     comments: [comment2],
+    avatar: Avatar2,
   };
 
   const accounts = [account1, account2];
@@ -151,16 +155,26 @@ export default function ProductPage() {
             <div className="comments-section">
               {commentsToShow.map((comment, index) => (
                 <div key={index} className="comment">
-                  <strong>{comment.name}</strong>{" "}
-                  <div className="stars">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} colored={i < comment.stars} />
-                    ))}
-                  </div>
-                  <div
-                    className={`textbox ${index % 2 == 0 ? "right" : "left"}`}
-                  >
-                    {comment.content}
+                  <div className="account-comment">
+                    <div className="withAvatar">
+                      {index % 2 === 0 ? <Avatar1 /> : <Avatar2 />}
+
+                      <strong>{comment.name}</strong>
+                    </div>
+                    <div className="withStars">
+                      <div className="stars">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} colored={i < comment.stars} />
+                        ))}
+                      </div>
+                      <div
+                        className={`textbox ${
+                          index % 2 == 0 ? "right" : "left"
+                        }`}
+                      >
+                        {comment.content}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
