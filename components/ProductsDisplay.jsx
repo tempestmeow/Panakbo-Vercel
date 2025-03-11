@@ -1,11 +1,6 @@
 import { useRouter } from "next/navigation";
 
-export default function ProductsDisplay({
-  products,
-  toggleCart,
-  cart,
-  handleViewProduct,
-}) {
+export default function ProductsDisplay({ products, toggleCart, cart }) {
   const router = useRouter();
 
   return (
@@ -112,7 +107,6 @@ export default function ProductsDisplay({
                   </div>
                   <div className="statusIcon">
                     <svg
-                      onClick={() => handleViewProduct(product)}
                       width="37"
                       height="33"
                       viewBox="0 0 37 33"

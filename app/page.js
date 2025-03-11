@@ -70,69 +70,54 @@ export default function Home() {
   };
 
   const allProducts = [
-    { ...product1, id: 1 },
-    { ...product2, id: 2 },
-    { ...product3, id: 3 },
-    { ...product4, id: 4 },
-    { ...product5, id: 5 },
-    { ...product6, id: 6 },
-    { ...product1, id: 7 },
-    { ...product2, id: 8 },
-    { ...product3, id: 9 },
-    { ...product4, id: 10 },
-    { ...product5, id: 11 },
-    { ...product6, id: 12 },
-    { ...product1, id: 13 },
-    { ...product2, id: 14 },
-    { ...product3, id: 15 },
-    { ...product4, id: 16 },
-    { ...product5, id: 17 },
-    { ...product6, id: 18 },
+    { ...product1 },
+    { ...product2 },
+    { ...product3 },
+    { ...product4 },
+    { ...product5 },
+    { ...product6 },
+    { ...product1 },
+    { ...product2 },
+    { ...product3 },
+    { ...product4 },
+    { ...product5 },
+    { ...product6 },
+    { ...product1 },
+    { ...product2 },
+    { ...product3 },
+    { ...product4 },
+    { ...product5 },
+    { ...product6 },
   ];
 
-  const updatedCart = [];
   const [productsInView, setProductsInView] = useState(allProducts);
 
   const [cart, setCart] = useState([]);
 
   const toggleCart = (id) => {
-    let updatedCart = [...cart];
+    setCart((prevCart) => {
+      const productIndex = prevCart.findIndex((item) => item.id === id);
 
-    let isInCart = false;
-
-    for (let i = 0; i < updatedCart.length; i++) {
-      if (updatedCart[i].id === id) {
-        updatedCart.splice(i, 1);
-        isInCart = true;
-        break;
-      }
-    }
-
-    if (!isInCart) {
-      for (let i = 0; i < productsInView.length; i++) {
-        if (productsInView[i].id === id) {
-          updatedCart.push(productsInView[i]);
-          break;
+      if (productIndex !== -1) {
+        return prevCart.filter((item) => item.id !== id);
+      } else {
+        const productToAdd = allProducts.find((product) => product.id === id);
+        if (productToAdd) {
+          return [...prevCart, productToAdd];
         }
       }
-    }
-
-    setCart(updatedCart);
+      return prevCart;
+    });
   };
-
-  const [viewProduct, setViewProduct] = useState(false);
 
   const handleViewProduct = () => {
     setViewProduct((prev) => !prev);
   };
 
   useEffect(() => {
-    console.log(updatedCart);
-  }, [updatedCart]);
+    console.log("Cart updated:", cart);
+  }, [cart]);
 
-  const mensList = allProducts.filter((product) =>
-    product.category.includes("Mens")
-  );
   return (
     <div className="page" style={{ display: "flex", flexDirection: "column" }}>
       <Header />
@@ -146,7 +131,6 @@ export default function Home() {
             products={productsInView}
             toggleCart={toggleCart}
             cart={cart}
-            handleViewProduct={handleViewProduct}
           />
         </div>
       </div>
