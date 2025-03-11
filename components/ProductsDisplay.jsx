@@ -18,10 +18,13 @@ export default function ProductsDisplay({
             <div
               className="productCard"
               key={product.id}
-              onClick={() => router.push(`/products/${product.id}`)}
               style={{ cursor: "pointer" }}
             >
-              <img src={product.img} className="productImage" />
+              <img
+                src={product.img}
+                className="productImage"
+                onClick={() => router.push(`/products/${product.id}`)}
+              />
 
               <div className="productDetails">
                 <div className="productLabels">
