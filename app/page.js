@@ -1,6 +1,6 @@
 "use client";
 import "./styles/global.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import LeftDisplay from "@/components/LeftDisplay";
 import Categories from "@/components/Categories";
@@ -8,6 +8,7 @@ import ProductsDisplay from "@/components/ProductsDisplay";
 
 export default function Home() {
   const [view, setView] = useState("All");
+
   const product1 = {
     name: "Air Max 97",
     price: 20.99,
@@ -69,28 +70,29 @@ export default function Home() {
   };
 
   const allProducts = [
-    product1,
-    product2,
-    product3,
-    product4,
-    product5,
-    product6,
-    product1,
-    product2,
-    product3,
-    product4,
-    product5,
-    product6,
-    product1,
-    product2,
-    product3,
-    product4,
-    product5,
-    product6,
+    { ...product1, id: 1 },
+    { ...product2, id: 2 },
+    { ...product3, id: 3 },
+    { ...product4, id: 4 },
+    { ...product5, id: 5 },
+    { ...product6, id: 6 },
+    { ...product1, id: 7 },
+    { ...product2, id: 8 },
+    { ...product3, id: 9 },
+    { ...product4, id: 10 },
+    { ...product5, id: 11 },
+    { ...product6, id: 12 },
+    { ...product1, id: 13 },
+    { ...product2, id: 14 },
+    { ...product3, id: 15 },
+    { ...product4, id: 16 },
+    { ...product5, id: 17 },
+    { ...product6, id: 18 },
   ];
+
+  const updatedCart = [];
   const [productsInView, setProductsInView] = useState(allProducts);
 
-  const [indexOfCart, setIndexOfCart] = useState([]);
   const [cart, setCart] = useState([]);
 
   const toggleCart = (id) => {
@@ -118,9 +120,15 @@ export default function Home() {
     setCart(updatedCart);
   };
 
+  const [viewProduct, setViewProduct] = useState(false);
+
   const handleViewProduct = () => {
-    setViewProduct(!viewProduct);
+    setViewProduct((prev) => !prev);
   };
+
+  useEffect(() => {
+    console.log(updatedCart);
+  }, [updatedCart]);
 
   const mensList = allProducts.filter((product) =>
     product.category.includes("Mens")

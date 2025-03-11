@@ -40,7 +40,7 @@ export default function Header() {
         <div className="left">
           <div className="searchInput">
             <input type="text" className="search-bar"></input>
-            <span class="material-symbols-outlined search">search</span>
+            <span className="material-symbols-outlined search">search</span>
           </div>
 
           <div className="cart">

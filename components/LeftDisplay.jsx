@@ -14,7 +14,7 @@ export default function LeftDisplay() {
             <img src="/images/saleShoe.png" className="offer-image" />
           </div>
           <div className="dealNavigation">
-            <span class="material-symbols-outlined arrow">
+            <span className="material-symbols-outlined arrow">
               arrow_back_ios_new
             </span>
             <p className="circleGroup">
@@ -22,7 +22,7 @@ export default function LeftDisplay() {
               <span className="circle"></span>
               <span className="circle"></span>
             </p>
-            <span class="material-symbols-outlined arrow">
+            <span className="material-symbols-outlined arrow">
               arrow_forward_ios
             </span>
           </div>
