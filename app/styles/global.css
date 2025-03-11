@@ -871,3 +871,21 @@ a.scroll-down-text {
 .backIcon {
   cursor: pointer;
 }
+
+.color1 {
+  position: absolute;
+  width: 8%;
+  height: 60%;
+  background: linear-gradient(to bottom, #ffeb3b, #c0a000);
+  top: 0;
+  z-index: -2;
+}
+
+.color2 {
+  background: linear-gradient(to bottom, #f13c28, #2c323b);
+}
+
+.shoe2 {
+  width: 84%;
+  top: -5%;
+}

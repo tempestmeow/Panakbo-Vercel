@@ -36,15 +36,29 @@ export default function ProductPage() {
     productId: 1,
   };
 
+  const comment3 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 2,
+  };
+
+  const comment4 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4,
+    productId: 2,
+  };
+
   const account1 = {
     name: "Thomas S.",
-    comments: [comment1],
+    comments: [comment1, comment4],
     avatar: Avatar1,
   };
 
   const account2 = {
     name: "Luka D.",
-    comments: [comment2],
+    comments: [comment2, comment3],
     avatar: Avatar2,
   };
 
@@ -98,7 +112,14 @@ export default function ProductPage() {
       description:
         "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
     },
-    { id: 2, name: "React Presto", price: 20.99, img: "/images/shoe2.png" },
+    {
+      id: 2,
+      name: "React Presto",
+      price: 20.99,
+      img: "/images/shoe2big.png",
+      description:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
     { id: 3, name: "Nike Jumper 1", price: 20.99, img: "/images/shoe3.png" },
     { id: 4, name: "React Presto", price: 20.99, img: "/images/shoe4.png" },
     { id: 5, name: "Optimum Pride", price: 20.99, img: "/images/shoe5.png" },
@@ -121,11 +142,11 @@ export default function ProductPage() {
         onWheel={handleScroll}
       >
         <div className="productDesign">
-          <img src={product.img} className="shoeImage" />
-          <div className="rectangleDesign stripe1"></div>
-          <div className="rectangleDesign stripe2"></div>
-          <div className="rectangleDesign stripe3"></div>
-          <div className="rectangleDesign stripe4" s></div>
+          <img src={product.img} className={`shoeImage shoe${id}`} />
+          <div className={`rectangleDesign stripe1 color${id}`}></div>
+          <div className={`rectangleDesign stripe2 color${id}`}></div>
+          <div className={`rectangleDesign stripe3 color${id}`}></div>
+          <div className={`rectangleDesign stripe4 color${id}`}></div>
         </div>
         <div className="productInfo">
           <BackIcon onClick={backPage} />
