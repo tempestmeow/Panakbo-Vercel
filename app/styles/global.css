@@ -560,7 +560,6 @@ button.submit-signup {
   position: absolute;
   width: 8%;
   height: 60%;
-  background: linear-gradient(to bottom, #ffeb3b, #c0a000);
   top: 0;
   z-index: -2;
 }
@@ -876,7 +875,7 @@ a.scroll-down-text {
   position: absolute;
   width: 8%;
   height: 60%;
-  background: linear-gradient(to bottom, #ffeb3b, #c0a000);
+  background: linear-gradient(to bottom, #fdf509 30%, #776d0c);
   top: 0;
   z-index: -2;
 }
@@ -888,4 +887,37 @@ a.scroll-down-text {
 .shoe2 {
   width: 84%;
   top: -5%;
+}
+
+.color3 {
+  background: linear-gradient(to bottom, #1ac98c 35%, #2c323b 100%);
+}
+
+.shoe3 {
+  top: 0%;
+}
+
+.color4 {
+  background: linear-gradient(to bottom, #37198b 18%, #7630af 75%);
+}
+
+.color5 {
+  background: linear-gradient(to bottom, #062ba4 30%, #b0e7ec 95%);
+}
+
+.shoe4 {
+  left: 3%;
+  width: 85%;
+}
+
+.shoe5 {
+  top: 0%;
+}
+
+.shoe6 {
+  top: 0%;
+}
+
+.color6 {
+  background: linear-gradient(to bottom, #c7ddf5 42%, #124053 79%);
 }

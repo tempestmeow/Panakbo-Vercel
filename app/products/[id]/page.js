@@ -15,7 +15,7 @@ export default function ProductPage() {
   const router = useRouter();
   const { id } = useParams();
   const [scrollTimes, setScrollTimes] = useState(0);
-  const [isInInfo, setInInfo] = useState(false);
+  const [isInInfo, setInInfo] = useState(true);
   const lastScrollRef = useRef(0);
 
   const backPage = () => {
@@ -50,15 +50,71 @@ export default function ProductPage() {
     productId: 2,
   };
 
+  const comment5 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 3,
+  };
+
+  const comment6 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4,
+    productId: 3,
+  };
+
+  const comment7 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 4,
+  };
+
+  const comment8 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4,
+    productId: 4,
+  };
+
+  const comment9 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 5,
+  };
+
+  const comment10 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4,
+    productId: 5,
+  };
+
+  const comment11 = {
+    content:
+      "Love my Air Max 87! Super comfortable and stylish, perfect for everyday wear. The cushioning feels great, and the quality is top-notch!",
+    stars: 5,
+    productId: 6,
+  };
+
+  const comment12 = {
+    content:
+      "Great sneakers with a classic look. Overall, really happy with my purchase!",
+    stars: 4,
+    productId: 6,
+  };
+
   const account1 = {
     name: "Thomas S.",
-    comments: [comment1, comment4],
+    comments: [comment1, comment4, comment5, comment8, comment10, comment12],
     avatar: Avatar1,
   };
 
   const account2 = {
     name: "Luka D.",
-    comments: [comment2, comment3],
+    comments: [comment2, comment3, comment6, comment9, comment11, comment7],
     avatar: Avatar2,
   };
 
@@ -120,10 +176,38 @@ export default function ProductPage() {
       description:
         "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
     },
-    { id: 3, name: "Nike Jumper 1", price: 20.99, img: "/images/shoe3.png" },
-    { id: 4, name: "React Presto", price: 20.99, img: "/images/shoe4.png" },
-    { id: 5, name: "Optimum Pride", price: 20.99, img: "/images/shoe5.png" },
-    { id: 6, name: "Nike Panakbo", price: 20.99, img: "/images/shoe6.png" },
+    {
+      id: 3,
+      name: "Nike Jumper 1",
+      price: 20.99,
+      img: "/images/shoe3big.png",
+      description:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
+    {
+      id: 4,
+      name: "React Presto",
+      price: 20.99,
+      img: "/images/shoe4big.png",
+      description:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
+    {
+      id: 5,
+      name: "Optimum Pride",
+      price: 20.99,
+      img: "/images/shoe5big.png",
+      description:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
+    {
+      id: 6,
+      name: "Nike Panakbo",
+      price: 20.99,
+      img: "/images/shoe6big.png",
+      description:
+        "Featuring the original ripple design inspired by Japanese bullet trains, the Nike Air Max 97 lets you push your style full-speed ahead. Taking the revolutionary full-length Nike Air unit that shook up the running world and adding fresh colors and crisp details, it lets you ride in first-class comfort.",
+    },
   ];
 
   if (!id) return <p>Loading...</p>;
@@ -134,7 +218,6 @@ export default function ProductPage() {
   return (
     <div className="productPage">
       <Header />
-
       <div
         className="productBody"
         onMouseEnter={() => setInInfo(true)}
