@@ -63,7 +63,7 @@ export default function Header({ cart }) {
             </svg>
 
             <svg
-              className={`arrow ${isOpen ? "openArrow" : ""}`}
+              className={`arrow-icon ${isOpen ? "openArrow" : ""}`}
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
