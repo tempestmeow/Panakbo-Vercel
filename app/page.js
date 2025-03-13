@@ -120,7 +120,7 @@ export default function Home() {
 
   return (
     <div className="page" style={{ display: "flex", flexDirection: "column" }}>
-      <Header />
+      <Header cart={cart} />
 
       <div className="Main">
         <LeftDisplay />

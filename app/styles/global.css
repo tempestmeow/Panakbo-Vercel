@@ -66,11 +66,6 @@ input.search-bar {
   border: 1.5px solid #dbdbdb;
 }
 
-.cart,
-.forum {
-  transform: translateY(0.3rem);
-}
-
 /* main content */
 
 .Header {
@@ -82,9 +77,6 @@ input.search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 1250) {
-  }
 }
 
 .main-left {
@@ -93,17 +85,14 @@ input.search-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 450px;
 }
 
 .main-right {
   flex: 7 1 0;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   padding: 2rem 2rem;
-
-  @media (max-width: 1220px) {
-  }
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;450;500;600;700&display=swap");
@@ -920,4 +909,36 @@ a.scroll-down-text {
 
 .color6 {
   background: linear-gradient(to bottom, #c7ddf5 42%, #124053 79%);
+}
+
+/* DROP DOWN CART */
+
+.dropDownCart {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 190%;
+  transform: translateX(-11rem);
+}
+
+.cart {
+  position: relative;
+}
+
+.shoe-cart {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.item-inCart {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.drop-item-name {
+  align-self: center;
+  width: 7rem;
+  font-family: "Inter", sans-serif;
 }

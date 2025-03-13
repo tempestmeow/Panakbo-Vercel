@@ -1,7 +1,23 @@
-export default function Header() {
+import React from "react";
+import { useState } from "react";
+
+export default function Header({ cart }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
-      {" "}
       <div className="Header">
         <div className="menu">
           <svg
@@ -43,7 +59,11 @@ export default function Header() {
             <span className="material-symbols-outlined search">search</span>
           </div>
 
-          <div className="cart">
+          <div
+            className="cart"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <svg
               width="27"
               height="27"
@@ -56,20 +76,17 @@ export default function Header() {
                 fill="#323232"
               />
             </svg>
-          </div>
-          <div className="forum">
-            <svg
-              width="27"
-              height="27"
-              viewBox="0 0 35 35"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M28.1875 8.75001H25.5625V21.875H8.5V24.7917C8.5 25.5938 9.09062 26.25 9.8125 26.25H24.25L29.5 32.0833V10.2083C29.5 9.40626 28.9094 8.75001 28.1875 8.75001ZM22.9375 17.5V4.37501C22.9375 3.57292 22.3469 2.91667 21.625 2.91667H4.5625C3.84062 2.91667 3.25 3.57292 3.25 4.37501V24.7917L8.5 18.9583H21.625C22.3469 18.9583 22.9375 18.3021 22.9375 17.5Z"
-                fill="#323232"
-              />
-            </svg>
+
+            <div className="dropDownCart">
+              {cart.map((item, index) => {
+                return (
+                  <div className="item-inCart" key={index}>
+                    <a className="drop-item-name">{item.name}</a>
+                    <img className="shoe-cart" src={item.img} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
