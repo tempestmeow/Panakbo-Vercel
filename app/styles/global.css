@@ -85,7 +85,6 @@ input.search-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 450px;
 }
 
 .main-right {
@@ -112,8 +111,6 @@ body {
   font-family: "Poppins", sans-serif;
   margin-top: 10vh;
   min-width: 400px;
-  @media (min-width: 960px) {
-  }
 }
 
 .appName {
@@ -425,7 +422,7 @@ button.submit-signup {
   grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
   column-gap: 1rem;
   row-gap: 1rem;
-  max-height: 30.5rem;
+  max-height: 29rem;
   overflow-y: auto;
   padding-right: 1rem;
 
@@ -516,12 +513,9 @@ button.submit-signup {
   flex-direction: column;
 }
 
-.logos-container {
-  position: relative;
-}
 .contactLogos {
   position: absolute;
-  bottom: -3rem;
+  bottom: 3rem;
   left: 2rem;
 }
 
@@ -536,8 +530,8 @@ button.submit-signup {
 
 .productDesign {
   position: relative;
-  min-width: 800px; /* Default size */
-  max-width: 90vw; /* Makes it responsive */
+  min-width: 800px;
+  max-width: 90vw;
   height: auto;
   max-height: 500px;
   overflow: hidden;

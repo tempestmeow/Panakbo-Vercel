@@ -303,7 +303,7 @@ export default function ProductPage() {
       </div>
 
       <div className="logos-container">
-        <ContactLogos />
+        <ContactLogos className="product-contact-logos" />
       </div>
     </div>
   );
