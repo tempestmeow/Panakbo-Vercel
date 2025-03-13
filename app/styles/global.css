@@ -23,7 +23,6 @@ body {
 }
 
 .Header {
-  padding: 1.7rem 4rem;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
@@ -497,7 +496,7 @@ button.submit-signup {
 /* PRODUCT PAGE */
 
 .Header {
-  padding: 1.7rem 4rem;
+  padding: 1.4rem 6rem;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
@@ -797,7 +796,7 @@ a.scroll-down-text {
   flex-grow: 1;
 }
 
-.textbox.right::after {
+.textbox.t-right::after {
   content: "";
   position: absolute;
   left: -13px;
@@ -808,7 +807,7 @@ a.scroll-down-text {
   border-right: 15px solid #444;
 }
 
-.textbox.left::after {
+.textbox.t-left::after {
   content: "";
   position: absolute;
   right: -10px;
@@ -917,18 +916,34 @@ a.scroll-down-text {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 190%;
-  transform: translateX(-11rem);
+  top: 150%;
+  transform: translateX(-12rem);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 30px;
+  border: 2px solid black;
+  gap: 1rem;
 }
 
 .cart {
   position: relative;
+  padding-right: 1rem;
+}
+
+.shoe-cart-container {
+  border-radius: 30px;
+  padding: 0rem 0.3rem;
+  background-color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shoe-cart {
   width: 5rem;
-  height: 5rem;
+  height: 4rem;
   object-fit: contain;
+  border-radius: 30px;
 }
 
 .item-inCart {
@@ -941,4 +956,11 @@ a.scroll-down-text {
   align-self: center;
   width: 7rem;
   font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
 }

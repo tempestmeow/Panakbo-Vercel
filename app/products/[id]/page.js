@@ -281,7 +281,7 @@ export default function ProductPage() {
                       </div>
                       <div
                         className={`textbox ${
-                          index % 2 == 0 ? "right" : "left"
+                          index % 2 == 0 ? "t-right" : "t-left"
                         }`}
                       >
                         {comment.content}
