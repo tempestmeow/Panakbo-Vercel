@@ -1119,9 +1119,10 @@ a.scroll-down-text {
   }
 
   .productsCollection {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, clamp(10rem, 30.2vw, 17rem));
     padding-left: 1rem;
-    padding-top: 1rem;
+    padding-right: 1rem;
+    justify-content: center;
   }
 
   .categoryIcon {
@@ -1146,7 +1147,7 @@ a.scroll-down-text {
   }
 
   .productImage {
-    width: 14rem;
+    width: 12rem;
     height: 10rem;
     object-fit: contain;
   }
