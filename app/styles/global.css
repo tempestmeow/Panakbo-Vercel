@@ -1059,7 +1059,17 @@ a.scroll-down-text {
   }
   .main-right {
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
+
+  .categories {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+  }
+
   .main-left {
     min-width: 100%;
   }
@@ -1123,13 +1133,15 @@ a.scroll-down-text {
     padding-left: 1rem;
     padding-right: 1rem;
     justify-content: center;
+    padding-bottom: 1rem;
+    margin: 0rem 2rem;
   }
 
   .categoryIcon {
     font-weight: 900;
     color: #9c9c9c;
-    padding: clamp(0rem, 0.2rem, 0.3rem) clamp(2rem, 2.2rem, 3rem);
-    font-size: clamp(2rem, 3vw, 3rem);
+    padding: clamp(0rem, 0.36vw, 0.3rem) clamp(2rem, 0.4vw, 3rem);
+    font-size: clamp(1rem, 3vw, 3rem);
   }
 
   .contactLogos {
@@ -1148,8 +1160,6 @@ a.scroll-down-text {
 
   .productImage {
     width: 12rem;
-    height: 10rem;
-    object-fit: contain;
   }
 
   .productCard {
@@ -1164,28 +1174,10 @@ a.scroll-down-text {
 
     border-radius: 70px;
   }
+}
 
-  .productDetails {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .productName {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .productPrice {
-    font-size: 0.9rem;
-  }
-
-  .statusIcon {
-    transform: scale(0.9);
-  }
-
-  .productStatus {
-    display: flex;
-    gap: 0.3rem;
+@media (max-width: 768px) {
+  .productsCollection {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
