@@ -333,6 +333,7 @@ button.submit-signup {
 .offerDiv {
   margin-top: 1rem;
   position: relative;
+  width: 100%;
 }
 
 .sale-offer {
@@ -374,8 +375,8 @@ button.submit-signup {
 
 .dealNavigation {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-top: 1.3rem;
 }
 
@@ -446,7 +447,6 @@ button.submit-signup {
   }
 
   @media (max-width: 960px) {
-    grid-template-columns: repeat(1, 1fr);
     justify-items: center;
   }
 }
@@ -1047,5 +1047,77 @@ a.scroll-down-text {
 @media (max-width: 1350px) {
   .main-left {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 960px) {
+  .Main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-right {
+    flex: 1;
+  }
+  .main-left {
+    min-width: 100%;
+  }
+
+  .offerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offers {
+    width: 600px;
+    height: 200px;
+  }
+
+  .offer-image {
+    position: absolute;
+    width: 58%;
+    height: auto;
+    left: 40%;
+    bottom: -25%;
+  }
+
+  .sale-offer {
+    font-weight: 750;
+    font-size: 2rem;
+  }
+
+  .sale-offer-smaller {
+    font-size: 1.4rem;
+  }
+
+  .sale-description {
+    color: #525252;
+    font-size: 1.2rem;
+  }
+
+  .sale-button {
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    width: fit-content;
+  }
+
+  .sale-offer,
+  .sale-description,
+  .sale-button {
+    margin-left: 2rem;
+  }
+
+  .dealNavigation {
+    display: flex;
+    justify-content: baseline;
+  }
+
+  .productsCollection {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
