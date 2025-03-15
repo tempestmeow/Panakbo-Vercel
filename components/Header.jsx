@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import DefaultIcon from "@/components/DefaultIcon";
 export default function Header({ cart }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -92,6 +92,7 @@ export default function Header({ cart }) {
             )}
           </div>
         </div>
+        {/* <DefaultIcon /> */}
       </div>
     </div>
   );

@@ -46,6 +46,7 @@ body {
   top: 0.46rem;
   right: 1rem;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 input.search-bar {
@@ -85,11 +86,11 @@ input.search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 2rem;
 }
 
 .main-left {
   flex: 2;
-  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   align-self: start;
@@ -99,7 +100,7 @@ input.search-bar {
   flex: 7 1 0;
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
+  padding-left: 1rem;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;450;500;600;700&display=swap");
@@ -309,7 +310,7 @@ button.submit-signup {
 
 .offer-image {
   position: absolute;
-  width: min(20vw, 250px);
+  width: 80%;
   height: auto;
   left: 26%;
   bottom: -15%;
@@ -324,12 +325,14 @@ button.submit-signup {
   border-radius: 70px;
   font-family: "Inter", sans-serif;
   padding: 2rem;
-  max-width: 20rem;
+  width: 20rem;
+  max-width: (20rem);
   position: relative;
 }
 
 .offerDiv {
-  margin-top: 3rem;
+  margin-top: 1rem;
+  position: relative;
 }
 
 .sale-offer {
@@ -434,7 +437,7 @@ button.submit-signup {
   grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
   column-gap: 1rem;
   row-gap: 1rem;
-  max-height: 29rem;
+  max-height: 30rem;
   overflow-y: auto;
   padding-right: 1rem;
 
@@ -471,7 +474,8 @@ button.submit-signup {
   justify-content: center;
   padding: 0.6rem 2.1rem 1.4rem 2.1rem;
   border: 1px solid rgb(189, 188, 188);
-  box-shadow: 0px 4px 4px 0px var(--boxShadow);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+
   border-radius: 70px;
 
   @media (max-width: 960px) {
@@ -545,7 +549,6 @@ button.submit-signup {
   min-width: 800px;
   max-width: 90vw;
   height: auto;
-  max-height: 500px;
   overflow: hidden;
   display: flex;
   z-index: -1;
@@ -1039,4 +1042,10 @@ a.scroll-down-text {
   animation: fadeInCart 0.3s ease forwards;
   animation-delay: calc(0.05s * var(--index, 0));
   opacity: 0;
+}
+
+@media (max-width: 1350px) {
+  .main-left {
+    max-width: 90%;
+  }
 }
