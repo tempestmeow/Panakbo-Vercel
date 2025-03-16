@@ -105,6 +105,7 @@ input.search-bar {
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
+  justify-content: center;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;450;500;600;700&display=swap");
@@ -1247,43 +1248,18 @@ a.scroll-down-text {
 
   .offer-image {
     position: absolute;
-    width: clamp(100px, 42vw, 330px);
+    width: clamp(220px, 44vw, 350px);
     left: 35vw;
     bottom: -5vw;
   }
 
-  .sale-offer {
-    font-weight: 750;
+  .categoryIcon {
+    padding: 0.36vw 2rem;
     font-size: 2rem;
+    overflow-x: auto;
   }
 
-  .sale-offer-smaller {
-    font-size: 1.4rem;
-  }
-
-  .sale-description {
-    color: #525252;
-    font-size: 1.2rem;
-  }
-
-  .sale-button {
-    margin-top: 2rem;
-    background-color: black;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 30px;
-    font-size: 1.4rem;
-    width: fit-content;
-  }
-
-  .sale-offer,
-  .sale-description,
-  .sale-button {
-    margin-left: 2rem;
-  }
-
-  .dealNavigation {
-    display: flex;
-    justify-content: baseline;
+  .main-right {
+    overflow-x: auto;
   }
 }
