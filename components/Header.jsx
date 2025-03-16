@@ -17,6 +17,7 @@ export default function Header({ cart }) {
             viewBox="0 0 32 34"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
+            className="menuIcon"
           >
             <g clipPath="url(#clip0_2_31)">
               <path

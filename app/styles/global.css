@@ -66,10 +66,13 @@ input.search-bar {
 }
 
 .menu {
-  padding: 0.1rem 0.5rem;
+  padding: 0rem 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: 1.5px solid #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchInput {
@@ -318,11 +321,11 @@ button.submit-signup {
 }
 
 .offers {
-  background-color: #dbdada;
+  background-color: #efefef;
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(189, 188, 188);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 70px;
   font-family: "Inter", sans-serif;
   padding: 2rem;
@@ -1048,6 +1051,10 @@ a.scroll-down-text {
   .main-left {
     max-width: 90%;
   }
+
+  body {
+    overflow-y: auto;
+  }
 }
 
 @media (max-width: 960px) {
@@ -1179,5 +1186,104 @@ a.scroll-down-text {
 @media (max-width: 768px) {
   .productsCollection {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .right {
+  }
+
+  .Header {
+    padding: 1rem 2rem;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .menu {
+    padding: 0rem 0.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 1.5px solid #dbdbdb;
+    display: flex;
+  }
+
+  .menuIcon {
+    width: 20px;
+    height: 23px;
+    align-self: center;
+  }
+
+  .search-bar {
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .search {
+    position: absolute;
+    top: 0.46rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  input.search-bar {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    max-height: 10px;
+    height: 10px;
+    font-size: 0.7rem;
+  }
+
+  .offerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offers {
+    width: clamp(300px, 78vw, 600px);
+    height: 200px;
+  }
+
+  .offer-image {
+    position: absolute;
+    width: clamp(100px, 42vw, 330px);
+    left: 35vw;
+    bottom: -5vw;
+  }
+
+  .sale-offer {
+    font-weight: 750;
+    font-size: 2rem;
+  }
+
+  .sale-offer-smaller {
+    font-size: 1.4rem;
+  }
+
+  .sale-description {
+    color: #525252;
+    font-size: 1.2rem;
+  }
+
+  .sale-button {
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    width: fit-content;
+  }
+
+  .sale-offer,
+  .sale-description,
+  .sale-button {
+    margin-left: 2rem;
+  }
+
+  .dealNavigation {
+    display: flex;
+    justify-content: baseline;
   }
 }
