@@ -1058,6 +1058,23 @@ a.scroll-down-text {
 }
 
 @media (max-width: 960px) {
+  .arrow {
+    font-size: clamp(20px, 3vw, 30px);
+  }
+
+  .arrow {
+    margin: 0rem clamp(0.4rem, 3vw, 1.5rem);
+  }
+
+  .circleGroup {
+    gap: clamp(0.3rem, 1.3vw, 0.7rem);
+  }
+
+  .circle {
+    height: clamp(0.4rem, 1.5vw, 0.57rem);
+    width: clamp(0.4rem, 1.25vw, 0.57rem);
+  }
+
   .Main {
     flex-direction: column;
     justify-content: center;
