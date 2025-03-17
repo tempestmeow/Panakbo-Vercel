@@ -1149,7 +1149,7 @@ a.scroll-down-text {
     font-weight: 900;
     color: #9c9c9c;
     padding: clamp(0rem, 0.36vw, 0.3rem) clamp(2rem, 0.4vw, 3rem);
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: clamp(1.4rem, 3vw, 3rem);
   }
 
   .contactLogos {
@@ -1254,22 +1254,17 @@ a.scroll-down-text {
     bottom: -5vw;
   }
 
-  .categoryIcon {
-    padding: 0.36vw 2rem;
-    font-size: 1.5rem;
-    overflow-x: auto;
-  }
-
-  .main-right {
-    overflow-x: auto;
+  .categories {
+    padding-left: 2rem;
+    overflow-x: scroll;
+    overflow: scroll;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: start;
   }
 
-  .categories {
-    align-self: start;
-    justify-content: flex-start;
-    /* padding-left: 5rem; */
-    overflow-x: auto;
-    margin-left: 5rem;
+  .categoryIcon {
+    overflow-x: scroll;
+    overflow: scroll;
   }
 }
