@@ -1186,10 +1186,11 @@ a.scroll-down-text {
 
 @media (max-width: 768px) {
   .productsCollection {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, clamp(11rem, 30.2vw, 17rem));
   }
 
-  .right {
+  .productImage {
+    width: clamp(10rem, 20vw, 14rem);
   }
 
   .Header {
