@@ -1255,11 +1255,20 @@ a.scroll-down-text {
 
   .categoryIcon {
     padding: 0.36vw 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     overflow-x: auto;
   }
 
   .main-right {
     overflow-x: auto;
+    justify-content: start;
+  }
+
+  .categories {
+    align-self: start;
+    justify-content: flex-start;
+    /* padding-left: 5rem; */
+    overflow-x: auto;
+    margin-left: 5rem;
   }
 }
