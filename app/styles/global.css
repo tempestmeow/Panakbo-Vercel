@@ -1061,6 +1061,24 @@ button.submit-signup {
   flex-direction: column;
 }
 
+.contactLogos {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productBody {
+  padding: 0rem 2rem;
+  display: flex;
+  height: 100%;
+  max-height: 500px;
+  position: relative;
+  z-index: 0;
+}
+
 .productDesign {
   position: relative;
   min-width: 800px;
@@ -1071,6 +1089,15 @@ button.submit-signup {
   z-index: -1;
 }
 
+.shoeImage {
+  z-index: 2;
+  position: absolute;
+  width: 90%;
+  top: -10%;
+  left: 0;
+  height: auto;
+}
+
 .rectangleDesign {
   position: absolute;
   width: 8%;
@@ -1079,23 +1106,19 @@ button.submit-signup {
   z-index: -2;
 }
 
-.shoeImage {
-  z-index: 2;
-  position: absolute;
-  width: 90%;
-  top: -10%;
-}
-
 .stripe1 {
   left: 30%;
 }
+
 .stripe2 {
   left: 40%;
 }
+
 .stripe3 {
   left: 50%;
   height: 40%;
 }
+
 .stripe4 {
   left: 60%;
   height: 40%;
