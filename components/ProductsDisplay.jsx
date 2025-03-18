@@ -36,6 +36,7 @@ export default function ProductsDisplay({ products, toggleCart, cart }) {
                         viewBox="0 0 37 33"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        className="toggle-cart-icon"
                       >
                         <rect width="37" height="33" rx="12" fill="white" />
                         <rect
@@ -74,6 +75,7 @@ export default function ProductsDisplay({ products, toggleCart, cart }) {
                         viewBox="0 0 37 33"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        className="toggle-cart-icon"
                       >
                         <rect width="37" height="33" rx="12" fill="white" />
                         <rect
@@ -112,6 +114,7 @@ export default function ProductsDisplay({ products, toggleCart, cart }) {
                       viewBox="0 0 37 33"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="arrow-product-icon"
                     >
                       <rect width="37" height="33" rx="12" fill="white" />
                       <rect
