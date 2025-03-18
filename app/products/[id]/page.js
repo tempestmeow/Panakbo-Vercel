@@ -218,12 +218,7 @@ export default function ProductPage() {
   return (
     <div className="productPage">
       <Header />
-      <div
-        className="productBody"
-        onMouseEnter={() => setInInfo(true)}
-        onMouseLeave={() => setInInfo(false)}
-        onWheel={handleScroll}
-      >
+      <div className="productBody">
         <div className="productDesign">
           <img src={product.img} className={`shoeImage shoe${id}`} />
           <div className={`rectangleDesign stripe1 color${id}`}></div>
@@ -231,7 +226,12 @@ export default function ProductPage() {
           <div className={`rectangleDesign stripe3 color${id}`}></div>
           <div className={`rectangleDesign stripe4 color${id}`}></div>
         </div>
-        <div className="productInfo">
+        <div
+          className="productInfo"
+          onMouseEnter={() => setInInfo(true)}
+          onMouseLeave={() => setInInfo(false)}
+          onWheel={handleScroll}
+        >
           <BackIcon onClick={backPage} />
           {scrollTimes == 0 && (
             <>
