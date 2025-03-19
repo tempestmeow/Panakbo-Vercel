@@ -1257,7 +1257,6 @@ button.submit-signup {
 }
 
 .productInfo {
-  flex-wrap: wrap;
   flex: 1;
   display: flex;
   flex-direction: column;

@@ -135,9 +135,10 @@ export default function ProductPage() {
   const [commentsToShow, setCommentsToShow] = useState([]);
 
   const handleScroll = (event) => {
+    event.preventDefault();
+
     const now = Date.now();
     if (isInInfo && now - lastScrollRef.current > 200) {
-      // 200ms debounce
       if (event.deltaY > 0) {
         setScrollTimes((prev) => prev + 1);
       } else if (event.deltaY < 0 && scrollTimes > 0) {
@@ -147,6 +148,16 @@ export default function ProductPage() {
     }
   };
 
+  useEffect(() => {
+    const infoElement = document.querySelector(".productInfo");
+    if (infoElement) {
+      const wheelHandler = (event) => handleScroll(event);
+      infoElement.addEventListener("wheel", wheelHandler, { passive: false });
+      return () => {
+        infoElement.removeEventListener("wheel", wheelHandler);
+      };
+    }
+  }, [handleScroll]);
   useEffect(() => {
     const productComments = findAccounts(id);
 
