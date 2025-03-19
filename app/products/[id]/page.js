@@ -290,7 +290,9 @@ export default function ProductPage() {
                   </div>
                 </div>
               ))}
-              <div className="scroll-down">
+              <div
+                className={`scroll-down ${scrollTimes > 0 ? "scrolled" : ""}`}
+              >
                 <div className="scroll-arrows-comments">
                   <ScrollIcon delay="0" />
                   <ScrollIcon delay="0.5" />
