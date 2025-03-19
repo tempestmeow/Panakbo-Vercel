@@ -5,22 +5,22 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/products/[id]/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/products/[id]/page.css",
-      "static/chunks/app/products/[id]/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/api/auth/[...nextauth]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/auth/[...nextauth]/route.js"
     ],
-    "/page": [
+    "/products/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/css/app/products/[id]/page.css",
+      "static/chunks/app/products/[id]/page.js"
     ]
   }
 }

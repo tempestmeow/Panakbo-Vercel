@@ -431,6 +431,15 @@ button.submit-signup {
   color: white;
 }
 
+.contactLogos {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* page */
 
 .page {
@@ -760,14 +769,16 @@ button.submit-signup {
     font-size: clamp(1.4rem, 3vw, 3rem);
   }
 
-  .contactLogos {
+  .main-left .contactLogos {
     display: flex;
     flex-direction: row;
     gap: 20px;
     bottom: 1%;
     left: 40%;
     align-items: center;
+    position: absolute;
   }
+
   .all {
     background-color: black;
     border-radius: 28.5px;
@@ -907,7 +918,7 @@ button.submit-signup {
     max-height: 235px;
   }
 
-  .contactLogos {
+  .main-left .contactLogos {
     left: 35%;
   }
 
@@ -1006,7 +1017,7 @@ button.submit-signup {
     padding-left: 3rem;
   }
 
-  .contactLogos {
+  .main-left .contactLogos {
     left: 30%;
   }
 }
@@ -1066,8 +1077,7 @@ button.submit-signup {
   flex-direction: column;
 }
 
-.contactLogos {
-  position: absolute;
+.logos-container .contactLogos {
   bottom: 3.5rem;
   left: 2rem;
   display: flex;
@@ -1238,13 +1248,22 @@ button.submit-signup {
 }
 
 @media (max-width: 450px) {
+  .productBody {
+    overflow-x: visible;
+  }
   .productDesign {
     max-height: 300px;
+    min-width: 450px;
+    justify-self: center;
+    transform: translateX(-20px);
+    overflow-x: visible;
   }
 
   .shoeImage {
     height: 100%;
     max-height: 300px;
+    min-width: 450px;
+    min-height: 360px;
   }
 
   .rectangleDesign {
@@ -1252,7 +1271,7 @@ button.submit-signup {
     max-height: 250px;
   }
 
-  .contactLogos {
+  .logos-container .contactLogos {
     visibility: hidden;
   }
 }
@@ -1571,11 +1590,24 @@ a.scroll-down-text {
   background: linear-gradient(to bottom, #c7ddf5 42%, #124053 79%);
 }
 
-productBody.contactLogos {
-  position: absolute;
-  bottom: 3.5rem;
-  left: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+@media (max-width: 400px) {
+  .productDesign {
+    max-height: 300px;
+    min-width: 450px;
+    justify-self: center;
+    transform: translateX(-10px);
+    overflow-x: visible;
+  }
+
+  .shoeImage {
+    height: 100%;
+    max-height: 300px;
+    min-width: 350px;
+    min-height: 360px;
+  }
+
+  .rectangleDesign {
+    max-width: 300px;
+    max-height: 250px;
+  }
 }
