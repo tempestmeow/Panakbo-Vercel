@@ -132,6 +132,30 @@ export default function ProductPage() {
     );
   };
 
+  const [touchStartY, setTouchStartY] = useState(0);
+
+  const handleTouchStart = (event) => {
+    setTouchStartY(event.touches[0].clientY);
+  };
+
+  const handleTouchMove = (event) => {
+    if (!isInInfo) return;
+
+    const touchY = event.touches[0].clientY;
+    const diff = touchStartY - touchY;
+
+    const now = Date.now();
+    if (now - lastScrollRef.current > 200) {
+      if (diff > 5) {
+        setScrollTimes((prev) => prev + 1);
+      } else if (diff < -5 && scrollTimes > 0) {
+        setScrollTimes((prev) => prev - 1);
+      }
+      lastScrollRef.current = now;
+      setTouchStartY(touchY);
+    }
+  };
+
   const [commentsToShow, setCommentsToShow] = useState([]);
 
   const handleScroll = (event) => {
@@ -241,6 +265,8 @@ export default function ProductPage() {
           onMouseEnter={() => setInInfo(true)}
           onMouseLeave={() => setInInfo(false)}
           onWheel={handleScroll}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
         >
           <BackIcon onClick={backPage} />
           {scrollTimes == 0 && (

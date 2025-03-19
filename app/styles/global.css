@@ -1152,6 +1152,7 @@ button.submit-signup {
 
   .productInfo {
     flex-wrap: wrap;
+    touch-action: pan-y;
   }
 
   .productBody {
