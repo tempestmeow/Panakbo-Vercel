@@ -902,6 +902,10 @@ button.submit-signup {
 }
 
 @media (max-width: 450px) {
+  .dropDownCart {
+    max-height: 235px;
+  }
+
   .contactLogos {
     left: 35%;
   }
@@ -1102,6 +1106,7 @@ button.submit-signup {
   position: absolute;
   width: 8%;
   height: 20vw;
+
   top: 0;
   z-index: -2;
 }
@@ -1161,20 +1166,21 @@ button.submit-signup {
     max-width: 100%;
     min-width: auto;
     width: 100%;
-    min-height: 400px;
+    min-height: 360px;
   }
 
   .shoeImage {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
+    height: auto;
+    min-height: 360px;
     margin: 0 auto;
     top: 0;
   }
 
   .rectangleDesign {
     height: 80%;
-    min-width: 20px;
   }
 
   .stripe4 {
@@ -1183,6 +1189,26 @@ button.submit-signup {
 
   .stripe3 {
     height: 70%;
+  }
+
+  .stripe1.color2 {
+    height: 70%;
+  }
+  .stripe2.color2 {
+    height: 70%;
+  }
+  .stripe4.color2 {
+    height: 50%;
+  }
+
+  .stripe1.color6 {
+    height: 70%;
+  }
+  .stripe2.color6 {
+    height: 70%;
+  }
+  .stripe4.color6 {
+    height: 50%;
   }
 }
 
@@ -1200,7 +1226,34 @@ button.submit-signup {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
+  .productDesign {
+    max-height: 10vw;
+  }
+
+  .shoeImage {
+    height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .productDesign {
+    max-height: 300px;
+  }
+
+  .shoeImage {
+    height: 100%;
+    max-height: 300px;
+  }
+
+  .rectangleDesign {
+    max-width: 300px;
+    max-height: 250px;
+  }
+
+  .contactLogos {
+    visibility: hidden;
+  }
 }
 
 .productInfo {
