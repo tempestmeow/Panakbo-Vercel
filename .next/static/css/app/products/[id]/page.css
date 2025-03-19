@@ -1600,7 +1600,7 @@ a.scroll-down-text {
 @media (max-width: 400px) {
   .productDesign {
     max-height: 300px;
-    min-width: 450px;
+    min-width: 350px;
     justify-self: center;
     transform: translateX(-10px);
     overflow-x: visible;
@@ -1609,7 +1609,7 @@ a.scroll-down-text {
   .shoeImage {
     height: 100%;
     max-height: 300px;
-    min-width: 350px;
+    min-width: 300px;
     min-height: 360px;
   }
 
