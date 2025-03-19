@@ -1222,6 +1222,10 @@ button.submit-signup {
   .stripe4.color6 {
     height: 50%;
   }
+
+  .productInfo {
+    transform: translateY(-45px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1249,27 +1253,45 @@ button.submit-signup {
 }
 
 @media (max-width: 450px) {
-  .productBody {
-    overflow-x: visible;
-  }
   .productDesign {
-    max-height: 300px;
-    min-width: 450px;
+    max-height: 250px;
+    min-width: 350px;
     justify-self: center;
-    transform: translateX(-20px);
-    overflow-x: visible;
+    transform: translateX(-10px);
+    overflow-x: hidden;
+    max-height: 300px;
+    display: flex;
+    gap: 10px;
   }
 
   .shoeImage {
     height: 100%;
     max-height: 300px;
-    min-width: 450px;
+    min-width: 360px;
     min-height: 360px;
+    display: block;
   }
 
   .rectangleDesign {
     max-width: 300px;
     max-height: 250px;
+    min-width: 40px;
+  }
+
+  .stripe1 {
+    left: 27%;
+  }
+
+  .stripe2 {
+    left: 40%;
+  }
+
+  .stripe3 {
+    left: 53%;
+  }
+
+  .stripe4 {
+    left: 66%;
   }
 
   .logos-container .contactLogos {
@@ -1593,22 +1615,48 @@ a.scroll-down-text {
 
 @media (max-width: 400px) {
   .productDesign {
-    max-height: 300px;
+    max-height: 250px;
     min-width: 350px;
     justify-self: center;
     transform: translateX(-10px);
-    overflow-x: visible;
+    overflow-x: hidden;
+    max-height: 300px;
+    display: flex;
+    gap: 10x;
   }
 
   .shoeImage {
     height: 100%;
     max-height: 300px;
-    min-width: 300px;
+    min-width: 360px;
     min-height: 360px;
+    display: block;
   }
 
   .rectangleDesign {
     max-width: 300px;
     max-height: 250px;
+    min-width: 40px;
+  }
+
+  .stripe1 {
+    left: 25%;
+  }
+
+  .stripe2 {
+    left: 40%;
+  }
+
+  .stripe3 {
+    left: 55%;
+  }
+
+  .stripe4 {
+    left: 70%;
+  }
+
+  .productInfo {
+    padding-top: 0;
+    transform: translateY(-45px);
   }
 }
