@@ -1121,23 +1121,89 @@ button.submit-signup {
 .stripe4 {
   left: 60%;
 }
-
 @media (max-width: 1023px) {
   .productBody {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .productDesign {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .shoeImage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  .rectangleDesign {
+    height: 80%;
+    min-width: 20px;
+  }
+
+  .stripe4 {
+    height: 70%;
+  }
+
+  .stripe3 {
+    height: 70%;
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
+  .productInfo {
+    padding: 1rem 1.5rem;
+  }
+
+  .productTitle {
+    font-size: 2rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .productDesign {
-    width: 400px;
+  .productInfo {
+    padding: 1rem;
   }
-  .shoeImage {
-    width: 70%;
-    top: -15%;
+
+  .pricing {
+    gap: 1.5rem;
+  }
+
+  .productTitle {
+    font-size: 1.8rem;
+  }
+
+  .account-comment {
+    flex-direction: column;
+  }
+
+  .comment:nth-child(even) .account-comment {
+    flex-direction: column;
+  }
+
+  .withAvatar {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .comment:nth-child(even) .withAvatar {
+    margin: 0;
+  }
+
+  .textbox.t-right::after,
+  .textbox.t-left::after {
+    display: none;
   }
 }
 
