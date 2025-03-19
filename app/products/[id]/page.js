@@ -135,8 +135,6 @@ export default function ProductPage() {
   const [commentsToShow, setCommentsToShow] = useState([]);
 
   const handleScroll = (event) => {
-    event.preventDefault();
-
     const now = Date.now();
     if (isInInfo && now - lastScrollRef.current > 200) {
       if (event.deltaY > 0) {
@@ -152,12 +150,13 @@ export default function ProductPage() {
     const infoElement = document.querySelector(".productInfo");
     if (infoElement) {
       const wheelHandler = (event) => handleScroll(event);
-      infoElement.addEventListener("wheel", wheelHandler, { passive: false });
+      infoElement.addEventListener("wheel", wheelHandler, { passive: true });
       return () => {
         infoElement.removeEventListener("wheel", wheelHandler);
       };
     }
-  }, [handleScroll]);
+  }, [scrollTimes]);
+
   useEffect(() => {
     const productComments = findAccounts(id);
 
